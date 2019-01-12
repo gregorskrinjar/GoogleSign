@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "591524555556",
+    "firebase_url": "https://signfirebase-63c47.firebaseio.com",
+    "project_id": "signfirebase-63c47",
+    "storage_bucket": "signfirebase-63c47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591524555556:android:9b23ae32672680b9",
+        "android_client_info": {
+          "package_name": "app.vaja.googlesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591524555556-lhclh1kgbsf036l56dorg707ahma82sp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.vaja.googlesign",
+            "certificate_hash": "d254f14aec12d3c4e2284393a09297730827710c"
+          }
+        },
+        {
+          "client_id": "591524555556-kmddlfv72a1h05mvg9lirt9oajaud07o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6M-7PC3gKn7b24L52w2fdGRj05QEKITw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591524555556-kmddlfv72a1h05mvg9lirt9oajaud07o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

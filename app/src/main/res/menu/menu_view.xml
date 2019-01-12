@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/profil"
+
+            android:title="@string/profil" />
+        <item
+            android:id="@+id/prijava_google"
+
+            android:title="@string/prijava" />
+        <item
+            android:id="@+id/odjava_google"
+
+            android:title="@string/odjava" />
+        <item
+            android:id="@+id/priljubljene_restavracije"
+
+            android:title="@string/priljubljene_restavracije" />
+    </group>
+</menu>
