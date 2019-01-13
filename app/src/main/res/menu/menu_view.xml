@@ -5,20 +5,20 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/profil"
+            android:id="@+id/nav_domov"
+
+            android:title="@string/domov" />
+        <item
+            android:id="@+id/nav_seznam_komentarjev"
+
+            android:title="@string/seznam_komentarjev" />
+        <item
+            android:id="@+id/nav_seznam_ocen"
+
+            android:title="@string/seznam_ocen" />
+        <item
+            android:id="@+id/nav_profil"
 
             android:title="@string/profil" />
-        <item
-            android:id="@+id/prijava_google"
-
-            android:title="@string/prijava" />
-        <item
-            android:id="@+id/odjava_google"
-
-            android:title="@string/odjava" />
-        <item
-            android:id="@+id/priljubljene_restavracije"
-
-            android:title="@string/priljubljene_restavracije" />
     </group>
 </menu>

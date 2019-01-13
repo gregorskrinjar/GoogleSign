@@ -61,9 +61,33 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:id="@+id/heartLayout"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+                <ImageView
+                    android:id="@+id/image_heart_red"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/vector_heart_red"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/image_heart"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:src="@drawable/vector_heart_white"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/restaurant_distance"
@@ -71,7 +95,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_weight="1"
-                android:text="Oddaljenost: 1 km"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"/>
 

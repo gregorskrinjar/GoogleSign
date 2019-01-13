@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">GoogleSign</string>
-    <string name="prijava">Prijava</string>
-    <string name="odjava">Odjava</string>
-    <string name="priljubljene_restavracije">Priljubljene restavracije</string>
+    <string name="domov">Domov</string>
+    <string name="seznam_komentarjev">Seznam komentarjev</string>
+    <string name="seznam_ocen">Seznam ocen</string>
     <string name="name_menu">Gregor Škrinjar</string>
     <string name="email_menu">gregor.skrinjar@student.um.si</string>
     <string name="profil">Profil</string>

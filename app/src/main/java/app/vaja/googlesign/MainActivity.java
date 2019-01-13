@@ -3,12 +3,14 @@ package app.vaja.googlesign;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
@@ -30,7 +32,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "mainActivity";
     private SignInButton signIn;
@@ -46,15 +48,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        /**
+         * Drawer sidebar menu
+         */
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);  //Da lahko kliknemo na izbrano (profil, seznam,...)
+        navigationView.setNavigationItemSelectedListener(this); //ko izbiramo v navigationu
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        //če slučajno rotiramo napravo, če rotiramo ni null
+        if (savedInstanceState == null) {
+            //Da ob vstopu ni prazen layout pokaže ta fragment
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new VseRestavracijeFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_domov);
+        }
 
         /**
          * RATING
@@ -74,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * GOOGLE SIGN IN WITH FIREBASE
          */
-       /* signIn = (SignInButton)findViewById(R.id.btnSignIn);
+        signIn = (SignInButton)findViewById(R.id.btnSignIn);
         signOut = (Button)findViewById(R.id.btnSignOut);
         mAuth = FirebaseAuth.getInstance();
 
@@ -102,7 +117,34 @@ public class MainActivity extends AppCompatActivity {
                 mAuth.signOut(); //get signed out
                 signOut.setVisibility(View.GONE);
             }
-        });*/
+        });
+    }
+
+    //za navigacijo ko je izbran določena beseda (profil, seznam...)
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            //Če kliknemo na ta item, nam bo v framelayoutu odpre profile, seznama,...
+            case R.id.nav_domov:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new VseRestavracijeFragment()).commit();
+                break;
+            case R.id.nav_profil:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ProfilFragment()).commit();
+                break;
+            case R.id.nav_seznam_komentarjev:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SeznamKomentarjevFragment()).commit();
+                break;
+            case R.id.nav_seznam_ocen:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ViewRestaurantFragment()).commit();
+                break;
+
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     //da ne zapustimo activity takoj ko zapremo side menu
@@ -182,4 +224,6 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("Ime uporabnika : " + personName + " in ID je : " + personId);
         }
     }
+
+
 }
