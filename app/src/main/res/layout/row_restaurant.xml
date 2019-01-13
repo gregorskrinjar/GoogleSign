@@ -71,8 +71,7 @@
                     android:id="@+id/image_heart_red"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentLeft="true"
                     android:src="@drawable/vector_heart_red"
                     android:visibility="invisible"/>
 
@@ -80,9 +79,7 @@
                     android:id="@+id/image_heart"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginTop="0dp"
                     android:src="@drawable/vector_heart_white"
                     android:visibility="visible" />
