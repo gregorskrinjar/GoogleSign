@@ -1,7 +1,6 @@
-package app.vaja.googlesign;
+package app.vaja.googlesign.Fragments;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,13 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import app.vaja.googlesign.R;
+import app.vaja.googlesign.Utils.Heart;
+
 import static android.content.ContentValues.TAG;
 
 public class ViewRestaurantFragment extends Fragment {
     ImageView mHeartRed, mHeartWhite;
     //detector za like, kaj se zgodi če lajkaš
     GestureDetector mGestureDetector;
-    private  Heart mHeart;
+    private Heart mHeart;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

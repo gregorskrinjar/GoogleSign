@@ -13,8 +13,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RatingBar;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
@@ -32,15 +30,23 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import app.vaja.googlesign.Fragments.ProfilFragment;
+import app.vaja.googlesign.Fragments.SeznamKomentarjevFragment;
+import app.vaja.googlesign.Fragments.ViewRestaurantFragment;
+import app.vaja.googlesign.Fragments.VseRestavracijeFragment;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "mainActivity";
+
+    //Google Sign in
     private SignInButton signIn;
     private Button signOut;
     private int RC_SIGN_IN = 1;
     GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
 
+    //Drawer
     private DrawerLayout drawer;
 
     @Override

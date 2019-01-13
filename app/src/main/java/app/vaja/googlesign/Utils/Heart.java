@@ -1,4 +1,4 @@
-package app.vaja.googlesign;
+package app.vaja.googlesign.Utils;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
